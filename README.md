@@ -12,6 +12,8 @@ Zenith is a modern web framework inspired by Next.js and Remix, designed to prov
 
 - **API Client Generation**: Automatically generate API clients from your OpenAPI specifications, reducing boilerplate and streamlining API consumption.
 
+- **Server Actions**: Simple usage of APIs as functions fully typed.
+
 - **Type Safety**: Enjoy strong typing for both your database models and API contracts, ensuring robustness and reliability throughout your application.
 
 - **React Support**: Zenith supports React, leveraging the power of Vite for lightning-fast development and hot module reloading.
