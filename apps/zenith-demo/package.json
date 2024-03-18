@@ -10,7 +10,7 @@
     "test": "zenith test"
   },
   "dependencies": {
-    "@zenith/cli": "workspace:*"
+    "zenith": "workspace:*"
   },
   "devDependencies": {
     "@zenith/eslint-config": "workspace:*",

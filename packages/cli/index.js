@@ -1,1 +1,1 @@
-require('./dist/index.js')
+import './dist/cmd.js'
