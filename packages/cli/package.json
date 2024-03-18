@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": "dist/cmd.js",
   "scripts": {
+    "dev": "bun src/cmd.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,10 +14,12 @@
   "dependencies": {
     "cmd-ts": "^0.13.0",
     "execa": "^8.0.1",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "vitest": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
+    "bun": "^1.0.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"
