@@ -1,5 +1,5 @@
 {
-  "name": "mono",
+  "name": "zenith",
   "private": true,
   "scripts": {
     "build": "turbo build",
