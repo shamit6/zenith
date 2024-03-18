@@ -1,10 +1,22 @@
-import { command, subcommands, run } from 'cmd-ts';
+import { command, subcommands, run, restPositionals } from 'cmd-ts';
+import {execa} from 'execa'
 
 const lint = command({
   name:'lint',
-  args:{},
-  handler(){
-   throw new Error('Not implemented yet') 
+  args:{
+    rest: restPositionals()
+  },
+  async handler({ rest }){
+    await Promise.allSettled([
+      execa('eslint', ['.', ...rest], {
+        cwd: process.cwd(),
+        stdio: 'inherit',
+      }),
+      execa('golangci-lint', ['run', ...rest], {
+        cwd: process.cwd(),
+        stdio: 'inherit',
+      })
+    ])
   }
 })
 

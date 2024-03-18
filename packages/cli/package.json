@@ -12,9 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "cmd-ts": "^0.13.0",
+    "execa": "^8.0.1",
     "vite": "^5.1.6"
   },
   "devDependencies": {
+    "@types/node": "^20.11.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"
