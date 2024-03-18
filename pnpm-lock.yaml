@@ -107,7 +107,18 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  apps/zenith-demo: {}
+  apps/zenith-demo:
+    dependencies:
+      '@zenith/cli':
+        specifier: workspace:*
+        version: link:../../packages/cli
+    devDependencies:
+      '@zenith/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@zenith/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
 
   packages/cli:
     dependencies:

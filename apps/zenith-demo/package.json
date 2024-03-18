@@ -9,6 +9,13 @@
     "dev": "zenith dev",
     "test": "zenith test"
   },
+  "dependencies": {
+    "@zenith/cli": "workspace:*"
+  },
+  "devDependencies": {
+    "@zenith/eslint-config": "workspace:*",
+    "@zenith/typescript-config": "workspace:*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
