@@ -1,5 +1,6 @@
 import { fetcher } from "../../src/fetcher";
 import useSWR from "swr";
+// import { getUsers } from './get-users.go'
 
 export function AdminPage() {
   const usernameRef = useRef<HTMLInputElement>(null);
