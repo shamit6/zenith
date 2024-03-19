@@ -10,9 +10,13 @@
     "test": "zenith test"
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "zenith": "workspace:*"
   },
   "devDependencies": {
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "@zenith/eslint-config": "workspace:*",
     "@zenith/typescript-config": "workspace:*"
   },
