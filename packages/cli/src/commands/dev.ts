@@ -15,7 +15,7 @@ export const dev = command({
   
 
 async function startClientDevServer(cwd: string) {
-  await execa(join(import.meta.dirname,'../../node_modules/.bin/vite'), {
+  await execa(join(import.meta.dirname,'../node_modules/.bin/vite'), {
     cwd,
     stdio: 'inherit',
   })

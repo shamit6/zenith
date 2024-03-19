@@ -1,13 +1,15 @@
 import { dirname, extname, join } from 'path'
 import { copy, readdir, rename, remove } from 'fs-extra'
 
+const assetsForTemplateDir = 'assetsForTemplate'
+
 export async function generateClientApp(appDir: string) {
     const generatedAppDir = join(appDir, 'dist/.generated')
 
     await remove(generatedAppDir)
     await copy(join(appDir, 'app'), generatedAppDir)
     await renamePages(generatedAppDir)
-    await copy(join(import.meta.dirname, 'vite.config.ts'), join(generatedAppDir, 'vite.config.ts'))
+    await copy(join(import.meta.dirname, '../src', assetsForTemplateDir, 'vite.config.ts'), join(generatedAppDir, 'vite.config.ts'))
 
     return generatedAppDir
 }
