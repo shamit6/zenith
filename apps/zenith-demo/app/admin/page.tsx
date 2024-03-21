@@ -1,17 +1,18 @@
+import { useRef } from "react";
 import { fetcher } from "../../src/fetcher";
 import useSWR from "swr";
-// import { getUsers } from './get-users.go'
+import { getUsers } from './get-users.go'
 
-export function AdminPage() {
+export default function AdminPage() {
   const usernameRef = useRef<HTMLInputElement>(null);
-  const { data: users, mutate } = useSWR("/api/user", fetcher);
-  // const { data: users, mutate } = useSWR("/api/user", getUsers); // Using server action
+  // const { data: users, mutate } = useSWR("/api/user", fetcher);
+  const { data: users, mutate } = useSWR("/api/user", getUsers); // Using server action
 
   // or just import as a server action
   const createUser = async () => {
     await fetch("/api/user", {
       method: "POST",
-      body: JSON.stringify({ name: usernameRef.current.value }),
+      body: JSON.stringify({ name: usernameRef.current?.value }),
     });
   };
 
