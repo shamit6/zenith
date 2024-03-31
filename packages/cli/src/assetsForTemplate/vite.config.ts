@@ -1,21 +1,46 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import { resolve } from "path";
-// import mpa from 'vite-plugin-mpa'
+import { resolve, join } from "path";
+import { readdir, exists } from "fs-extra";
 
-export default defineConfig({
-  plugins: [
-    react(),
-    // mpa({
-    //   scanDir: '.'
-    // })
-  ],
-  build: {
-    rollupOptions: {
-      input: {
-        index: resolve(__dirname, "index.html"),
-        async: resolve(__dirname, "async/index.html"),
+export default defineConfig(async () => {
+  return {
+    plugins: [react()],
+    build: {
+      rollupOptions: {
+        input: await getAllEntries(),
       },
     },
-  },
+  };
 });
+
+async function getAllEntries() {
+  const entries = await getEntries(__dirname);
+  return entries.reduce(
+    (acc, entry) => {
+      acc[entry === "." ? "index" : entry] = resolve(
+        __dirname,
+        entry,
+        "index.html"
+      );
+      return acc;
+    },
+    {} as Record<string, string>
+  );
+}
+
+async function getEntries(rootDir: string, dir = "."): Promise<string[]> {
+  const entries = [];
+  if (await exists(join(rootDir, dir, "index.html"))) {
+    entries.push(dir);
+  }
+  const subDirs = await readdir(join(rootDir, dir), { withFileTypes: true });
+  for (const subDir of subDirs) {
+    if (subDir.isDirectory()) {
+      const subEntries = await getEntries(rootDir, join(dir, subDir.name));
+      entries.push(...subEntries);
+    }
+  }
+
+  return entries;
+}
