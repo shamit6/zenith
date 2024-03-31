@@ -14,6 +14,8 @@ Zenith is a modern web framework inspired by Next.js and Remix, designed to prov
 
 - **Server Actions**: Simple usage of APIs as functions fully typed.
 
+- **RPC**: Simple usage of RPCs as functions fully typed.
+
 - **Type Safety**: Enjoy strong typing for both your database models and API contracts, ensuring robustness and reliability throughout your application.
 
 - **React Support**: Zenith supports React, leveraging the power of Vite for lightning-fast development and hot module reloading.
@@ -21,6 +23,8 @@ Zenith is a modern web framework inspired by Next.js and Remix, designed to prov
 - **Dockerfile Generation**: Zenith automatically generates Dockerfiles, simplifying the deployment process and ensuring consistency across environments.
 
 - **CLI Tool**: Zenith provides a command-line interface (CLI) tool for development, building, and starting your applications, streamlining your workflow and boosting productivity.
+
+- **Microservice\Lambdas**: Microservice and Lambdas are implementation detail and Communication for using them is as well, you can just declare how you want it to be implemented and zenith will do it for you.
 
 ## Getting Started
 
