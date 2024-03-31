@@ -6,6 +6,9 @@ import { readdir, exists } from "fs-extra";
 export default defineConfig(async () => {
   return {
     plugins: [react()],
+    server: {
+      port: 2000,
+    },
     build: {
       rollupOptions: {
         input: await getAllEntries(),

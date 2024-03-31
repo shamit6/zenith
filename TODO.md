@@ -12,11 +12,11 @@
 ## Dev command
 
 - [x] route by dir
-- [ ] run go server
 - [x] run vite server
+- [x] run go server
+- [x] generate gin server
 - [ ] add HMR (watch for file changes and regenerate code)
 - [ ] Async page server action
-- [ ] generate gin server
 - [ ] integrate api routes to the gin server (server actions)
 - [ ] vite\rollup plugin to genrate fetch wrappers of server actions
 - [ ] Server action that's API e2e flow working
