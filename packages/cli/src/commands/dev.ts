@@ -8,7 +8,7 @@ export const dev = command({
   args: {},
   async handler() {
     const appDir = process.cwd();
-    const cliPackageDir = import.meta.dirname ?? __dirname;
+    const cliPackageDir = join(import.meta.dirname ?? __dirname, "..");
     const generatedAppDir = await generateClientApp(appDir, cliPackageDir);
     await startClientDevServer(generatedAppDir, cliPackageDir);
   },
